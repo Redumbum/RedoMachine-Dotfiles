@@ -1,0 +1,90 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "modules": [
+    "title",
+    {
+      "type": "separator",
+      "string": "────────────────────────────",
+      "times": 2
+    },
+    {
+      "type": "os",
+      "key": "󰣇 DISTRO",
+      "format": "{name} {version}"
+    },
+    {
+      "type": "host",
+      "key": "  SYSTEM",
+      "format": "{version}"
+    },
+    {
+      "type": "uptime",
+      "key": " UPTIME",
+      "format": "{formatted}"
+    },
+    {
+      "type": "packages",
+      "key": "󰮯 PACKAGES",
+    },
+    {
+      "type": "wm",
+      "key": " WM",
+      "format": "{pretty-name} {version}"
+    },
+    {
+      "type": "terminal",
+      "key": " TERMINAL",
+    },
+    {
+      "type": "cpu",
+      "key": " CPU",
+    },
+    {
+      "type": "gpu",
+      "key": " GPU",
+    },
+    {
+      "type": "memory",
+      "key": " MEMORY",
+    },
+    {
+      "type": "disk",
+      "keyIcon": "󰋊",
+      "showRegular": true,
+      "showExternal": true,
+      "showHidden": false,
+      "showSubvolumes": false,
+      "showReadOnly": true,
+      "showUnknown": false,
+      "folders": "",
+      "hideFolders": "/efi:/boot:/boot/*",
+      "hideFS": "",
+      "useAvailable": false,
+    },
+    "break",
+    "colors",
+    {
+      "type": "separator",
+      "string": "────────────────────────────",
+      "times": 2
+    },
+  ],
+  "logo": {
+  "type": "kitty",
+  "source": "~/Pictures/MikuDarkSlightEdit-expor2t.png",
+  "width": 35,
+  "padding": {
+    "top": 2,
+    "right": 3,
+  },
+},
+"display": {
+  "color": {
+    "title": "red"
+
+    },
+  "separator": "  "
+
+
+  }
+}

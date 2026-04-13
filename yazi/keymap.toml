@@ -1,0 +1,5 @@
+[mgr]
+prepend_keymap = [
+{on = "<enter>", run = "plugin smart-enter"},
+{on = "l", run = "plugin smart-enter"},
+]
