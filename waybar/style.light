@@ -1,0 +1,199 @@
+/* --- Global Styles --- */
+* {
+    font-family: 'SF Pro Text', 'Inter', 'Segoe UI', 'NotoSans Nerd Font', sans-serif;
+    font-size: 13px;
+    min-height: 0;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    
+}
+
+/* --- Waybar Container --- */
+#waybar {
+    background: transparent;
+    color: #333333;               /* dark text for light bg */
+    margin: 0;
+    font-weight: 500;
+}
+
+/* --- Left Modules (Individual, Fully Rounded Blocks) --- */
+#workspaces,
+#custom-uptime,
+#cpu {
+    background-color: #f5f5f5;   /* light gray */
+    padding: 0.3rem 0.7rem;
+    margin: 5px 0;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    min-width: 0;
+    border: none;
+    transition: background-color .2s ease-in-out,
+                color .2s ease-in-out;
+}
+
+/* Specific spacing tweaks */
+#workspaces {
+    padding: 2px;
+    margin-left: 7px;            /* from far left edge */
+    margin-right: 5px;           /* after workspaces */
+}
+#custom-uptime {
+    margin-right: 5px;           /* after uptime */
+}
+
+/* Hover – slightly darker shade */
+#custom-uptime:hover,
+#cpu:hover {
+    background-color: #e0e0e0;
+}
+
+/* Workspace buttons */
+#workspaces button {
+    color: #555555;
+    border-radius: 5px;
+    padding: 0.3rem 0.6rem;
+    background: transparent;
+    transition: all .2s ease-in-out;
+    border: none;
+    outline: none;
+}
+#workspaces button.active {
+    color: #0066cc;
+    background-color: rgba(0,102,204,.1);
+    box-shadow: inset 0 0 0 1px rgba(0,102,204,.2);
+}
+#workspaces button:hover {
+    background: #e0e0e0;
+    color: #333333;
+}
+
+/* --- Center Module (Clock) --- */
+#clock {
+    background-color: #f5f5f5;
+    padding: 0.3rem 0.7rem;
+    margin: 5px 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    min-width: 0;
+    border: none;
+    transition: background-color .2s ease-in-out,
+                color .2s ease-in-out;
+}
+#clock:hover {
+    background-color: rgba(0,102,204,.05);
+}
+
+/* --- Pomodoro Module --- */
+#custom-pomodoro {
+    background-color: #f5f5f5;
+    padding: 0.3rem 0.7rem;
+    margin: 5px 0;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    min-width: 0;
+    border: none;
+    outline: none;
+    transition: background-color .2s ease-in-out,
+                color .2s ease-in-out,
+                outline .2s ease-in-out,
+                box-shadow .2s ease-in-out;
+    color: #555555;
+    font-weight: 600;
+}
+
+/* Positioning */
+#custom-pomodoro {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Hover */
+#custom-pomodoro:hover {
+    background-color: #e0e0e0;
+    color: #333333;
+    outline: 1px solid rgba(0,0,0,.1);
+    outline-offset: -1px;
+
+}
+
+/* Running states */
+#custom-pomodoro.work,
+#custom-pomodoro.break {
+    color: #0066cc;
+    background-color: rgba(0,102,204,.1);
+    box-shadow: inset 0 0 0 1px rgba(0,102,204,.2);
+    outline: none;
+
+}
+
+/* --- Right Modules (Seamless Bar) --- */
+#tray,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#network,
+#custom-lock,
+#battery {
+    background-color: #f5f5f5;
+    padding: 0.3rem 0.7rem;
+    margin: 5px 0;
+    border-radius: 0;
+    box-shadow: none;
+    min-width: 0;
+    border: none;
+    transition: background-color .2s ease-in-out,
+                color .2s ease-in-out;
+}
+#tray:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#custom-lock:hover,
+#battery:hover {
+    background-color: #e0e0e0;
+}
+
+/* Specific module tweaks */
+#bluetooth { border-radius: 0; }
+#tray {
+    margin-right: 0;
+    margin-left: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+#battery {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-right: 0px;
+}
+
+/* Text colours – dark for readability on light bg */
+#custom-uptime { color: #555555; }
+#cpu           { color: #333333; }
+#clock         { color: #0066cc; font-weight: 500; }
+#pulseaudio,
+#backlight,
+#network       { color: #333333; }
+#network.disconnected { color: #c0392b; }
+#custom-lock   { color: #555555; }
+#bluetooth     { color: #777777; font-size: 16px; }
+#bluetooth.on  { color: #0066cc; }
+#bluetooth.connected { color: #0066cc; }
+#tray          { font-size: 16px; }
+#battery        { color: #0066cc; }
+#battery.charging { color: #27ae60; }
+#battery.warning:not(.charging) { color: #c0392b; }
+
+/* --- Tooltip Styles --- */
+tooltip {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 5px 12px;
+    margin: 5px 0px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    font-size: 12px;
+}
