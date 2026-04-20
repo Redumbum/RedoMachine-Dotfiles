@@ -1,0 +1,134 @@
+[opener]
+# Video
+video = [
+    { run = 'mpv "$1"', desc = "mpv", orphan = true },
+]
+
+# Images
+image = [
+    { run = 'okular "$1"', desc = "Okular", orphan = true },
+]
+
+# Text editing – run Neovim directly in the terminal (waits for exit)
+editor = [
+    { run = 'nvim "%s"', block = true, desc = "Neovim" },
+]
+
+# Web browser
+browser = [
+    { run = 'zen-browser "%s"', desc = "Zen Browser", orphan = true },
+]
+
+# PDFs
+pdf = [
+    { run = 'okular "%s"', desc = "Okular", orphan = true },
+]
+
+# Office documents
+office = [
+    { run = 'libreoffice "%s"', desc = "LibreOffice", orphan = true },
+]
+
+# Audio
+audio = [
+    { run = 'mpv "%s"', desc = "mpv", orphan = true },
+]
+
+# Archives – extract in current directory
+archive = [
+    { run = 'ouch d -y "%s"', desc = "Extract here with ouch", block = true },
+]
+
+# Plain text (alternative to editor)
+text = [
+    { run = 'nvim "%s"', block = true },
+]
+
+
+[open]
+# Use prepend_rules to add your custom handlers *without* losing Yazi's built-in defaults
+prepend_rules = [
+    # Videos
+    { mime = "video/*", use = "video" },
+    { name = "*.mp4", use = "video" },
+    { name = "*.mkv", use = "video" },
+    { name = "*.avi", use = "video" },
+    { name = "*.mov", use = "video" },
+    { name = "*.webm", use = "video" },
+
+    # Images
+    { mime = "image/*", use = "image" },
+    { name = "*.jpg", use = "image" },
+    { name = "*.jpeg", use = "image" },
+    { name = "*.png", use = "image" },
+    { name = "*.gif", use = "image" },
+    { name = "*.webp", use = "image" },
+    { name = "*.svg", use = "image" },
+    { name = "*.cbz", use = "image" },
+    { name = "*.cbr", use = "image" },
+
+    # Code & text
+    { mime = "text/*", use = "editor" },
+    { name = "*.rs", use = "editor" },
+    { name = "*.py", use = "editor" },
+    { name = "*.js", use = "editor" },
+    { name = "*.ts", use = "editor" },
+    { name = "*.html", use = "editor" },
+    { name = "*.css", use = "editor" },
+    { name = "*.json", use = "editor" },
+    { name = "*.toml", use = "editor" },
+    { name = "*.yaml", use = "editor" },
+    { name = "*.yml", use = "editor" },
+    { name = "*.sh", use = "editor" },
+    { name = "*.lua", use = "editor" },
+    { name = "*.c", use = "editor" },
+    { name = "*.cpp", use = "editor" },
+    { name = "*.go", use = "editor" },
+    { name = "*.md", use = "editor" },
+    { name = "*.txt", use = "editor" },
+
+    # Web – HTML files open in browser
+    { name = "*.html", use = "browser" },
+    { name = "*.htm", use = "browser" },
+
+    # PDFs
+    { mime = "application/pdf", use = "pdf" },
+    { name = "*.pdf", use = "pdf" },
+
+    # Office documents
+    { mime = "application/msword", use = "office" },
+    { mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = "office" },
+    { mime = "application/vnd.ms-excel", use = "office" },
+    { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = "office" },
+    { mime = "application/vnd.ms-powerpoint", use = "office" },
+    { mime = "application/vnd.openxmlformats-officedocument.presentationml.presentation", use = "office" },
+    { name = "*.doc", use = "office" },
+    { name = "*.docx", use = "office" },
+    { name = "*.xls", use = "office" },
+    { name = "*.xlsx", use = "office" },
+    { name = "*.ppt", use = "office" },
+    { name = "*.pptx", use = "office" },
+    { name = "*.odt", use = "office" },
+    { name = "*.ods", use = "office" },
+    { name = "*.odp", use = "office" },
+
+    # Archives
+    { mime = "application/zip", use = "archive" },
+    { mime = "application/x-tar", use = "archive" },
+    { mime = "application/x-7z-compressed", use = "archive" },
+    { mime = "application/x-rar", use = "archive" },
+    { name = "*.zip", use = "archive" },
+    { name = "*.tar.gz", use = "archive" },
+    { name = "*.tgz", use = "archive" },
+    { name = "*.tar.xz", use = "archive" },
+    { name = "*.tar.bz2", use = "archive" },
+    { name = "*.rar", use = "archive" },
+    { name = "*.7z", use = "archive" },
+
+    # Audio
+    { mime = "audio/*", use = "audio" },
+    { name = "*.mp3", use = "audio" },
+    { name = "*.flac", use = "audio" },
+    { name = "*.ogg", use = "audio" },
+    { name = "*.wav", use = "audio" },
+]

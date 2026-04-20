@@ -1,5 +1,11 @@
 [mgr]
 prepend_keymap = [
 {on = "<enter>", run = "plugin smart-enter"},
+{on = "<S-Enter>", run = "plugin open-with-cmd"},
 {on = "l", run = "plugin smart-enter"},
+{on = ["c", "d"], run =  "plugin drag", desc = "drag and drop"},
+{on = "z", run = "plugin ouch"},
+{on = "Z", run = "plugin fzf"},
 ]
+
+
