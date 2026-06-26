@@ -17,8 +17,10 @@ if status is-interactive # Commands to run in interactive sessions can go here
     end
 
     # Aliases
-    alias pamcan pacman
+    alias dolphin='nohup dolphin . & kitty @ close-window'
     alias lf yazi
+    alias netfix='sudo modprobe -r iwlwifi && sudo modprobe iwlwifi && echo "WiFi adapter  
+    reset"'
     alias vim nvim
     alias yt youtube-tui
     alias ls 'eza --icons'
@@ -27,4 +29,17 @@ if status is-interactive # Commands to run in interactive sessions can go here
     fish_vi_key_bindings
     set -x MANPAGER "nvim +Man!"
 
+end
+
+function lf
+    set -l tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file=$tmp
+    set cwd (cat -- $tmp)
+    if test -s $tmp
+        if test -n "$cwd" -a "$cwd" != "$PWD"
+            cd -- $cwd
+            commandline -f repaint
+        end
+    end
+    rm -f -- $tmp
 end

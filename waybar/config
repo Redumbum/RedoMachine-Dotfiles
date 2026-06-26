@@ -14,7 +14,7 @@
 ],
 
   "modules-right": [
-    "tray", 
+    "tray",
     "network",
     "battery"
   ],
